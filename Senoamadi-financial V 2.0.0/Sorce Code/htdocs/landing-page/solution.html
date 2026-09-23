@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLUTION | SFS</title>
+    <meta name="description" content="SFS connects capital to opportunity — a capital circulation network designed for productive growth." />
+    <meta name="keywords" content="Senoamadi bank, solution, capital circulation, opportunity, financial ecosystem" />
+    <meta name="author" content="Judge Tshwarelo" />
+    <link rel="icon" type="image/png" href="/files/SFS-LOGO.png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F7D76A;
+            --dark: #040B16;
+            --navy: #08182E;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: white;
+            overflow-x: hidden;
+            background:
+                radial-gradient(circle at top right, rgba(212, 175, 55, .12), transparent 25%),
+                radial-gradient(circle at bottom left, rgba(0, 140, 255, .12), transparent 35%),
+                linear-gradient(135deg, #040B16, #071427, #020913);
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 60px;
+            background: rgba(4, 11, 22, .72);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, .8), transparent);
+        }
+
+        /* =========================
+           LOGO
+        ========================= */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+        }
+
+        .logo-orbit {
+            position: relative;
+            width: 58px;
+            height: 58px;
+        }
+
+        .logo-orbit img {
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+        }
+
+        .orbit-ring {
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(212, 175, 55, .4);
+            animation: spin 10s linear infinite;
+        }
+
+        .orbit-ring::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--gold);
+            border-radius: 50%;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 12px var(--gold), 0 0 25px var(--gold);
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .logo span {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+
+        /* =========================
+           DESKTOP NAV
+        ========================= */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        nav ul li a {
+            color: rgba(255, 255, 255, .75);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            position: relative;
+            transition: .35s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: white;
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transition: .35s;
+        }
+
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+
+        /* =========================
+           HERO / SECTIONS
+        ========================= */
+        section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        section h1 {
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 800;
+            background: linear-gradient(90deg, white, var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        section p {
+            max-width: 760px;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, .72);
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        /* =========================
+           MOBILE BOTTOM NAV
+        ========================= */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+            padding: 12px;
+            border-radius: 24px;
+            background: rgba(4, 11, 22, .88);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, .08);
+            z-index: 999;
+        }
+
+        .mobile-nav a {
+            color: rgba(255, 255, 255, .7);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 11px;
+            padding: 0 10px;
+        }
+
+        .mobile-nav i {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .mobile-nav a.active {
+            color: var(--gold);
+        }
+
+        /* =========================
+           AI ORB
+        ========================= */
+        .mobile-orb {
+            display: none;
+            position: fixed;
+            right: 20px;
+            bottom: 25px;
+            width: 72px;
+            height: 72px;
+            border-radius: 75%;
+            background: radial-gradient(circle at 30% 30%, #fff6d8, var(--gold));
+            box-shadow: 0 0 25px rgba(212, 175, 55, .5), 0 0 60px rgba(212, 175, 55, .25);
+            animation: pulse 3s infinite;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            position: fixed;
+            right: 20px;
+            bottom: 130px;
+            z-index: 998;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 14px;
+            background: rgba(8, 20, 40, .95);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(212, 175, 55, .18);
+            transition: .3s;
+        }
+
+        .mobile-menu a:hover,
+        .mobile-menu a.active {
+            transform: translateX(-5px);
+            border-color: var(--gold);
+            color: var(--gold-light);
+        }
+
+        /* =========================================
+           SOLUTION PAGE
+        ========================================= */
+        .solution-page-section {
+            position: relative;
+            overflow: hidden;
+            padding: 140px 20px 100px;
+        }
+
+        .solution-page-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, .08), transparent 45%);
+            pointer-events: none;
+        }
+
+        .solution-hero {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .solution-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            color: var(--gold-light);
+            background: rgba(212, 175, 55, .08);
+            border: 1px solid rgba(212, 175, 55, .25);
+            margin-bottom: 30px;
+            font-size: .9rem;
+            letter-spacing: 1px;
+        }
+
+        .solution-badge i {
+            color: var(--gold);
+        }
+
+        .solution-hero h1 {
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            font-weight: 800;
+            background: linear-gradient(90deg, #fff, var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 25px;
+        }
+
+        .solution-hero > p {
+            max-width: 720px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, .75);
+            line-height: 1.9;
+            font-size: 1.1rem;
+        }
+
+        /* =========================================
+           CAPITAL FLOW DIAGRAM
+        ========================================= */
+        .capital-flow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            margin: 70px auto 40px;
+            max-width: 480px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .flow-step {
+            width: 100%;
+            padding: 20px 30px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(8, 20, 40, .9), rgba(4, 11, 22, .95));
+            border: 1.5px solid rgba(212, 175, 55, .25);
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 2px;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            position: relative;
+            transition: .4s ease;
+        }
+
+        .flow-step:hover {
+            border-color: var(--gold);
+            box-shadow: 0 0 35px rgba(212, 175, 55, .15);
+            transform: scale(1.02);
+        }
+
+        .flow-step.highlight {
+            background: linear-gradient(135deg, rgba(212, 175, 55, .18), rgba(212, 175, 55, .05));
+            border-color: var(--gold);
+            color: #fff;
+            box-shadow: 0 0 40px rgba(212, 175, 55, .15);
+        }
+
+        .flow-connector {
+            width: 2px;
+            height: 30px;
+            background: linear-gradient(180deg, var(--gold), rgba(212, 175, 55, .2));
+            position: relative;
+        }
+
+        .flow-connector::after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 8px solid var(--gold);
+        }
+
+        /* =========================================
+           PROBLEMS SECTION — 3 BLOCKS ON DESKTOP
+        ========================================= */
+        .problems-section {
+            margin-top: 100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .problems-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .problems-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            background: linear-gradient(90deg, #fff, var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .problems-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, .7);
+            line-height: 1.9;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .problem-card {
+            background: linear-gradient(135deg, rgba(8, 20, 40, .8), rgba(4, 11, 22, .95));
+            border: 1px solid rgba(212, 175, 55, .18);
+            border-radius: 24px;
+            padding: 35px 30px;
+            backdrop-filter: blur(20px);
+            transition: .4s ease;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problem-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0;
+            transition: opacity .4s;
+        }
+
+        .problem-card:hover::before {
+            opacity: 1;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(212, 175, 55, .5);
+            box-shadow: 0 0 40px rgba(212, 175, 55, .1);
+        }
+
+        .problem-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(212, 175, 55, .18), rgba(212, 175, 55, .05));
+            border: 1px solid rgba(212, 175, 55, .25);
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .problem-card h3 {
+            color: #fff;
+            margin-bottom: 12px;
+            font-size: 1.15rem;
+        }
+
+        .problem-card p {
+            color: rgba(255, 255, 255, .7);
+            line-height: 1.8;
+            font-size: .95rem;
+            margin: 0;
+            max-width: none;
+        }
+
+        /* =========================================
+           CLOSING STATEMENT
+        ========================================= */
+        .closing-block {
+            margin-top: 100px;
+            padding: 60px 40px;
+            border-radius: 28px;
+            background: linear-gradient(135deg, rgba(8, 20, 40, .9), rgba(4, 11, 22, .95));
+            border: 1px solid rgba(212, 175, 55, .2);
+            position: relative;
+            overflow: hidden;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .closing-block::before {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 175, 55, .1), transparent 70%);
+        }
+
+        .closing-block blockquote {
+            position: relative;
+            font-size: clamp(1.5rem, 3vw, 2.4rem);
+            font-weight: 700;
+            line-height: 1.5;
+            color: white;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .closing-block blockquote span {
+            color: var(--gold-light);
+        }
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+        @media (max-width: 1024px) {
+            .problems-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .mobile-nav { display: flex; }
+            .mobile-orb { display: block; border-radius: 75%; }
+            header { padding: 15px 20px; }
+            .logo span { font-size: 1.2rem; }
+
+            .solution-page-section { padding: 110px 20px 80px; }
+            .flow-step { font-size: .9rem; padding: 16px 22px; letter-spacing: 1.5px; }
+            .flow-connector { height: 24px; }
+
+            .problems-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .closing-block { padding: 45px 25px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <div class="logo-orbit">
+                <div class="orbit-ring"></div>
+                <img src="/files/SFS-LOGO.png" alt="SFS LOGO">
+            </div>
+            <span>Senoamadi Financial Services</span>
+        </div>
+
+     <nav>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/landing-page/about.html">About</a></li>
+            <li><a href="/landing-page/purpose.html">Purpose</a></li>
+            <li><a href="/landing-page/solution.html"  class="active">Solution</a></li>
+            <li><a href="/landing-page/services.html">Services</a></li>
+            <li><a href="/landing-page/contact.html">Connect</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<div class="mobile-orb" onclick="toggleMenu()"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="/index.html">Home</a>
+    <a href="/landing-page/about.html">About</a>
+    <a href="/landing-page/purpose.html">Purpose</a>
+    <a href="/landing-page/solution.html"  class="active">Solution</a>
+    <a href="/landing-page/services.html">Services</a>
+    <a href="/landing-page/contact.html">Connect</a>
+</div>
+
+    <!-- SOLUTION SECTION -->
+    <section class="solution-page-section">
+
+        <div class="solution-hero">
+
+            <h1>Our Solution</h1>
+
+            <p>
+                Instead of simply storing money or offering expensive credit,
+                SFS is designed around capital circulation — moving money
+                responsibly through the economy so it creates real value.
+            </p>
+        </div>
+
+        <!-- CAPITAL FLOW DIAGRAM -->
+        <div class="capital-flow">
+            <div class="flow-step">Capital</div>
+            <div class="flow-connector"></div>
+            <div class="flow-step highlight">SFS Network</div>
+            <div class="flow-connector"></div>
+            <div class="flow-step">Verified Opportunities</div>
+            <div class="flow-connector"></div>
+            <div class="flow-step">Businesses / People</div>
+            <div class="flow-connector"></div>
+            <div class="flow-step">Economic Activity</div>
+            <div class="flow-connector"></div>
+            <div class="flow-step highlight">Value Returns</div>
+        </div>
+
+        <!-- PROBLEMS SECTION — 3 BLOCKS ON DESKTOP -->
+        <div class="problems-section">
+            <div class="problems-header">
+                <h2>What SFS solves</h2>
+                <p>The financial system has gaps. SFS is built to close them.</p>
+            </div>
+
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fa-solid fa-link-slash"></i>
+                    </div>
+                    <h3>Disconnected Capital</h3>
+                    <p>
+                        People have money but limited access to productive opportunities.
+                    </p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fa-solid fa-money-bill-trend-up"></i>
+                    </div>
+                    <h3>Expensive Funding</h3>
+                    <p>
+                        Small businesses and individuals can struggle to access reasonable financing.
+                    </p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </div>
+                    <h3>Limited Transparency</h3>
+                    <p>
+                        People don't always understand where capital goes or how value is created.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        }
+
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll("nav a, .mobile-nav a");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach(section => {
+                const top = section.offsetTop - 200;
+                if (window.scrollY >= top) {
+                    current = section.id;
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

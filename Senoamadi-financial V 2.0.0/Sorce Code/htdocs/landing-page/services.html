@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERVICES | SFS</title>
+    <meta name="description" content="Get access to reliable digital banking, financial partner, and technology-driven banking services." />
+    <meta name="keywords" content="Senoamadi bank, loan, Investment, technology-driven banking services, secure future, Judge" />
+    <meta name="author" content="Judge Tshwarelo" />
+    <link rel="icon" type="image/png" href="/files/SFS-LOGO.png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F7D76A;
+            --dark: #040B16;
+            --navy: #08182E;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: white;
+            overflow-x: hidden;
+            background:
+                radial-gradient(circle at top right, rgba(212, 175, 55, .12), transparent 25%),
+                radial-gradient(circle at bottom left, rgba(0, 140, 255, .12), transparent 35%),
+                linear-gradient(135deg, #040B16, #071427, #020913);
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 60px;
+            background: rgba(4, 11, 22, .72);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, .8), transparent);
+        }
+
+        /* =========================
+           LOGO
+        ========================= */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+        }
+
+        .logo-orbit {
+            position: relative;
+            width: 58px;
+            height: 58px;
+        }
+
+        .logo-orbit img {
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+        }
+
+        .orbit-ring {
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(212, 175, 55, .4);
+            animation: spin 10s linear infinite;
+        }
+
+        .orbit-ring::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--gold);
+            border-radius: 50%;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 12px var(--gold), 0 0 25px var(--gold);
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .logo span {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+
+        /* =========================
+           DESKTOP NAV
+        ========================= */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        nav ul li a {
+            color: rgba(255, 255, 255, .75);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            position: relative;
+            transition: .35s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: white;
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transition: .35s;
+        }
+
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+
+        /* =========================
+           HERO / SECTIONS
+        ========================= */
+        section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        section h1 {
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 800;
+            background: linear-gradient(90deg, white, var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        section p {
+            max-width: 760px;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, .72);
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        /* =========================
+           MOBILE NAV & ORB
+        ========================= */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+            padding: 12px;
+            border-radius: 24px;
+            background: rgba(4, 11, 22, .88);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, .08);
+            z-index: 999;
+        }
+
+        .mobile-nav a {
+            color: rgba(255, 255, 255, .7);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 11px;
+            padding: 0 10px;
+        }
+
+        .mobile-nav i {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .mobile-nav a.active {
+            color: var(--gold);
+        }
+
+        .mobile-orb {
+            display: none;
+            position: fixed;
+            right: 20px;
+            bottom: 25px;
+            width: 72px;
+            height: 72px;
+            border-radius: 75%;
+            background: radial-gradient(circle at 30% 30%, #fff6d8, var(--gold));
+            box-shadow: 0 0 25px rgba(212, 175, 55, .5), 0 0 60px rgba(212, 175, 55, .25);
+            animation: pulse 3s infinite;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            position: fixed;
+            right: 20px;
+            bottom: 130px;
+            z-index: 998;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 14px;
+            background: rgba(8, 20, 40, .95);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(212, 175, 55, .18);
+            transition: .3s;
+        }
+
+        .mobile-menu a:hover,
+        .mobile-menu a.active {
+            transform: translateX(-5px);
+            border-color: var(--gold);
+            color: var(--gold-light);
+        }
+
+        /* =========================================
+           SHARED SECTION STYLES
+        ========================================= */
+        .section-heading {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 70px;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 22px;
+            border-radius: 50px;
+            background: rgba(212, 175, 55, .08);
+            border: 1px solid rgba(212, 175, 55, .25);
+            color: var(--gold-light);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #ffffff, var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-heading p {
+            color: rgba(255, 255, 255, .72);
+            line-height: 1.9;
+        }
+
+        /* =========================================
+           BUILT AROUND YOU — VISUAL FLOW
+        ========================================= */
+        .flow-section {
+            min-height: 100vh;
+            padding: 60px 20px 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .flow-track {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 60px auto 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+
+        .flow-track::before {
+            content: "";
+            position: absolute;
+            top: 50px;
+            left: 8%;
+            right: 8%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold) 15%, var(--gold-light) 50%, var(--gold) 85%, transparent);
+            opacity: .35;
+            z-index: 0;
+        }
+
+        .flow-step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            background: rgba(8, 20, 40, .55);
+            border: 1px solid rgba(212, 175, 55, .15);
+            border-radius: 26px;
+            padding: 40px 26px 32px;
+            backdrop-filter: blur(20px);
+            transition: .4s;
+        }
+
+        .flow-step:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, .45);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, .3);
+        }
+
+        .flow-step .flow-orb {
+            width: 76px;
+            height: 76px;
+            margin: 0 auto 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(247, 215, 106, .28), rgba(212, 175, 55, .06));
+            border: 1.5px solid rgba(212, 175, 55, .4);
+            box-shadow: 0 0 30px rgba(212, 175, 55, .15);
+        }
+
+        .flow-step .flow-orb i {
+            font-size: 1.7rem;
+            color: var(--gold-light);
+        }
+
+        .flow-step .flow-tag {
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: rgba(212, 175, 55, .55);
+            margin-bottom: 8px;
+        }
+
+        .flow-step h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            background: linear-gradient(90deg, white, var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .flow-step p {
+            color: rgba(255, 255, 255, .62);
+            font-size: .9rem;
+            line-height: 1.7;
+            margin: 0;
+            max-width: none;
+        }
+
+        /* =========================================
+           TABLET RESPONSIVE (≤1000px)
+        ========================================= */
+        @media (max-width: 1000px) {
+            .flow-track {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .flow-track::before {
+                display: none;
+            }
+        }
+
+        /* =========================================
+           MOBILE RESPONSIVE (≤768px)
+        ========================================= */
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .mobile-nav { display: flex; }
+            .mobile-orb { display: block; border-radius: 75%; }
+            header { padding: 15px 20px; }
+            .logo span { font-size: 1.2rem; }
+
+            .section-heading {
+                margin-bottom: 40px;
+            }
+
+            .section-heading h2 {
+                font-size: 2rem;
+            }
+
+            .section-heading p {
+                font-size: .95rem;
+            }
+
+            .flow-section {
+                padding: 120px 16px 140px;
+            }
+
+            .flow-track {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                margin-top: 40px;
+            }
+
+            .flow-step {
+                padding: 32px 22px 26px;
+                border-radius: 22px;
+            }
+
+            .flow-step .flow-orb {
+                width: 64px;
+                height: 64px;
+                margin-bottom: 18px;
+            }
+
+            .flow-step .flow-orb i {
+                font-size: 1.4rem;
+            }
+
+            .flow-step h3 {
+                font-size: 1.15rem;
+            }
+
+            .flow-step p {
+                font-size: .88rem;
+            }
+        }
+
+        /* =========================================
+           SMALL MOBILE (≤480px)
+        ========================================= */
+        @media (max-width: 480px) {
+            header {
+                padding: 12px 16px;
+            }
+
+            .logo-orbit {
+                width: 46px;
+                height: 46px;
+            }
+
+            .logo span {
+                font-size: 1rem;
+            }
+
+            .section-tag {
+                font-size: .7rem;
+                padding: 8px 18px;
+            }
+
+            .flow-step {
+                padding: 28px 20px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <div class="logo-orbit">
+                <div class="orbit-ring"></div>
+                <img src="/files/SFS-LOGO.png" alt="SFS LOGO">
+            </div>
+            <span>Senoamadi Financial Services</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/landing-page/about.html">About</a></li>
+                <li><a href="/landing-page/purpose.html">Purpose</a></li>
+                <li><a href="/landing-page/solution.html">Solution</a></li>
+                <li><a href="/landing-page/services.html" class="active">Services</a></li>
+                <li><a href="/landing-page/contact.html">Connect</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="mobile-orb" onclick="toggleMenu()"></div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/index.html">Home</a>
+        <a href="/landing-page/about.html">About</a>
+        <a href="/landing-page/purpose.html">Purpose</a>
+        <a href="/landing-page/solution.html">Solution</a>
+        <a href="/landing-page/services.html" class="active">Services</a>
+        <a href="/landing-page/contact.html">Connect</a>
+    </div>
+
+    <!-- BUILT AROUND YOU -->
+    <section style="margin-top: 30px" id="built-around-you" class="flow-section">
+        <div class="section-heading">
+            <h2>Services</h2>
+            <p>From the moment capital enters the ecosystem to the value it creates — every step is structured, transparent and intentional.</p>
+        </div>
+
+        <div class="flow-track">
+            <div class="flow-step">
+                <div class="flow-orb"><i class="fa-solid fa-piggy-bank"></i></div>
+                <h3>SAVE</h3>
+                <p>Participate in appropriate capital products.</p>
+            </div>
+
+            <div class="flow-step">
+                <div class="flow-orb"><i class="fa-solid fa-sack-dollar"></i></div>
+                <h3>FUND</h3>
+                <p>Access structured business financing.</p>
+            </div>
+
+            <div class="flow-step">
+                <div class="flow-orb"><i class="fa-solid fa-seedling"></i></div>
+                <h3>GROW</h3>
+                <p>Turn capital into productive activity.</p>
+            </div>
+
+            <div class="flow-step">
+                <div class="flow-orb"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                <h3>RETURN</h3>
+                <p>Create sustainable financial value.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        }
+
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll("nav a, .mobile-nav a");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach(section => {
+                const top = section.offsetTop - 200;
+                if (window.scrollY >= top) {
+                    current = section.id;
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

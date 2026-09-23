@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Privacy Policy | Senoamadi Financial Services</title>
+
+<meta name="description"
+content="Senoamadi Financial Services Privacy Policy. Learn how we collect, use, protect, and process your personal information.">
+
+<meta name="keywords" content="Senoamadi bank, loan, Investment, technology-driven banking services, secure future, Judge" />
+<meta name="author" content="Judge Tshwarelo" />
+<link rel="icon" type="image/png" href="/files/SFS-LOGO.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+    --gold:#D4AF37;
+    --gold-light:#F7D76A;
+    --dark:#040B16;
+    --navy:#08182E;
+    --white:#ffffff;
+
+    --primary:#0A1A2F;
+    --secondary:#08182E;
+    --light:#f5f7fa;
+    --text:#333333;
+    --border:#e6eaf0;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    color:var(--text);
+    background:var(--light);
+    line-height:1.8;
+    overflow-x:hidden;
+}
+
+/* =========================
+   HEADER (from index)
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:16px 60px;
+
+    background:rgba(4,11,22,.92);
+    backdrop-filter:blur(25px);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+header::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:1px;
+
+    background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(212,175,55,.8),
+    transparent);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    cursor:pointer;
+}
+
+.logo-orbit{
+    position:relative;
+    width:58px;
+    height:58px;
+}
+
+.logo-orbit img{
+    width:100%;
+    height:100%;
+    border-radius:16px;
+    object-fit:cover;
+    position:relative;
+    z-index:2;
+}
+
+.orbit-ring{
+    position:absolute;
+    inset:-8px;
+    border-radius:50%;
+    border:1.5px solid rgba(212,175,55,.4);
+    animation:spin 10s linear infinite;
+}
+
+.orbit-ring::before{
+    content:"";
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    background:var(--gold);
+
+    border-radius:50%;
+
+    top:-5px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    box-shadow:
+    0 0 12px var(--gold),
+    0 0 25px var(--gold);
+}
+
+@keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+.logo span{
+    color:white;
+    font-size:1.5rem;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav ul li a{
+    color:rgba(255,255,255,.75);
+    text-decoration:none;
+    font-size:15px;
+    font-weight:500;
+    position:relative;
+    transition:.35s;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    color:white;
+}
+
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:2px;
+
+    background:linear-gradient(
+    90deg,
+    var(--gold),
+    var(--gold-light));
+
+    transition:.35s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after{
+    width:100%;
+}
+
+/* =========================
+   MOBILE BOTTOM NAV
+========================= */
+
+.mobile-nav{
+    display:none;
+
+    position:fixed;
+    left:50%;
+    bottom:20px;
+
+    transform:translateX(-50%);
+
+    padding:12px;
+
+    border-radius:24px;
+
+    background:rgba(4,11,22,.88);
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    z-index:999;
+}
+
+.mobile-nav a{
+    color:rgba(255,255,255,.7);
+    text-decoration:none;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    font-size:11px;
+
+    padding:0 10px;
+}
+
+.mobile-nav i{
+    font-size:18px;
+    margin-bottom:4px;
+}
+
+.mobile-nav a.active{
+    color:var(--gold);
+}
+
+/* =========================
+   AI ORB / MOBILE MENU
+========================= */
+
+.mobile-orb{
+    display:none;
+
+    position:fixed;
+
+    right:20px;
+    bottom:25px;
+
+    width:72px;
+    height:72px;
+
+    border-radius:75%;
+
+    background:
+    radial-gradient(circle at 30% 30%,
+    #fff6d8,
+    var(--gold));
+
+    box-shadow:
+    0 0 25px rgba(212,175,55,.5),
+    0 0 60px rgba(212,175,55,.25);
+
+    animation:pulse 3s infinite;
+
+    cursor:pointer;
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+.mobile-menu{
+    display:none;
+    flex-direction:column;
+    gap:10px;
+
+    position:fixed;
+    right:20px;
+    bottom:130px;
+
+    z-index:998;
+}
+
+.mobile-menu a{
+    text-decoration:none;
+    color:white;
+
+    padding:12px 18px;
+
+    border-radius:14px;
+
+    background:rgba(8,20,40,.95);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(212,175,55,.18);
+
+    transition:.3s;
+}
+
+.mobile-menu a:hover{
+    transform:translateX(-5px);
+    border-color:var(--gold);
+}
+
+/* =========================
+   PRIVACY POLICY CONTENT
+========================= */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:140px 20px 60px;
+}
+
+.policy-card{
+    background:var(--white);
+    padding:50px;
+    border-radius:20px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.08);
+}
+
+.header-block{
+    text-align:center;
+    margin-bottom:50px;
+    padding-bottom:30px;
+    border-bottom:1px solid var(--border);
+}
+
+.header-block h1{
+    color:var(--primary);
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.header-block p{
+    color:#666;
+}
+
+.section{
+    margin-bottom:45px;
+}
+
+.section h2{
+    color:var(--secondary);
+    margin-bottom:15px;
+    font-size:1.8rem;
+}
+
+.section h3{
+    color:var(--primary);
+    margin-top:25px;
+    margin-bottom:10px;
+    font-size:1.2rem;
+}
+
+.section p{
+    margin-bottom:15px;
+}
+
+.section ul{
+    padding-left:25px;
+}
+
+.section ul li{
+    margin-bottom:8px;
+}
+
+.highlight{
+    background:#f1f7ff;
+    border-left:5px solid var(--primary);
+    padding:20px;
+    margin:20px 0;
+    border-radius:10px;
+}
+
+footer.page-footer{
+    margin-top:50px;
+    text-align:center;
+    border-top:1px solid var(--border);
+    padding-top:25px;
+    color:#666;
+}
+
+a{
+    color:var(--primary);
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    nav{
+        display:none;
+    }
+
+    .mobile-nav{
+        display:flex;
+    }
+
+    .mobile-orb{
+        display:block;
+        border-radius:75%;
+    }
+
+    header{
+        padding:15px 20px;
+    }
+
+    .logo span{
+        font-size:1.2rem;
+    }
+
+    .container{
+        padding-top:110px;
+    }
+
+    .policy-card{
+        padding:30px 20px;
+    }
+
+    .header-block h1{
+        font-size:2rem;
+    }
+
+    .section h2{
+        font-size:1.5rem;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+    <div class="logo" onclick="window.location.href='index.php'">
+
+        <div class="logo-orbit">
+            <div class="orbit-ring"></div>
+            <img src="/files/SFS-LOGO.png" alt="SFS LOGO">
+        </div>
+
+        <span>Senoamadi Financial Services</span>
+
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="/index.html" class="active">Home</a></li>
+            <li><a href="/landing-page/about.html">About</a></li>
+            <li><a href="/landing-page/purpose.html">Purpose</a></li>
+            <li><a href="/landing-page/solution.html">Solution</a></li>
+            <li><a href="/landing-page/services.html">Services</a></li>
+            <li><a href="/landing-page/contact.html">Connect</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<div class="mobile-orb" onclick="toggleMenu()"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="/index.html" class="active">Home</a>
+    <a href="/landing-page/about.html">About</a>
+    <a href="/landing-page/purpose.html">Purpose</a>
+    <a href="/landing-page/solution.html">Solution</a>
+    <a href="/landing-page/services.html">Services</a>
+    <a href="/landing-page/contact.html">Connect</a>
+</div>
+
+<div class="container">
+
+<div class="policy-card">
+
+<div class="header-block">
+    <h1>Privacy Policy</h1>
+    <p><strong>Senoamadi Financial Services (SFS)</strong></p>
+    <p><strong>Effective Date:</strong> 29/10/2025</p>
+</div>
+
+<section class="section">
+    <h2>1. Introduction</h2>
+
+    <p>
+        Welcome to Senoamadi Financial Services ("SFS", "we", "our", or "us").
+    </p>
+
+    <p>
+        SFS is a financial technology platform dedicated to connecting
+        individuals, businesses, investors, lenders, and communities through
+        innovative digital financial solutions.
+    </p>
+
+    <p>
+        Your privacy is important to us. This Privacy Policy explains how we
+        collect, use, store, protect, process, and share your information when
+        you access our website, applications, platforms, products, or services.
+    </p>
+
+    <p>
+        By using SFS services, you acknowledge that you have read, understood,
+        and agreed to this Privacy Policy.
+    </p>
+</section>
+
+<section class="section">
+    <h2>2. Our Commitment to Privacy</h2>
+
+    <div class="highlight">
+        SFS is committed to protecting your information and maintaining the
+        highest standards of privacy, transparency, and security.
+    </div>
+
+    <ul>
+        <li>Protecting your personal information.</li>
+        <li>Processing data lawfully and transparently.</li>
+        <li>Maintaining industry-standard security practices.</li>
+        <li>Respecting your privacy rights.</li>
+        <li>Complying with POPIA and applicable privacy laws.</li>
+    </ul>
+</section>
+
+<section class="section">
+    <h2>3. Information We Collect</h2>
+
+    <p>
+        We may collect various categories of information.
+    </p>
+
+    <h3>3.1 Personal Information</h3>
+
+    <ul>
+        <li>Full Name</li>
+        <li>Identity or Passport Number</li>
+        <li>Date of Birth</li>
+        <li>Gender</li>
+        <li>Email Address</li>
+        <li>Mobile Number</li>
+        <li>Residential Address</li>
+        <li>Business Information</li>
+        <li>Employment Information</li>
+        <li>Banking Information</li>
+        <li>Financial Information</li>
+    </ul>
+
+    <h3>3.2 Account Information</h3>
+
+    <ul>
+        <li>Username</li>
+        <li>Password</li>
+        <li>Authentication Credentials</li>
+        <li>Security Questions</li>
+        <li>Verification Information</li>
+    </ul>
+
+    <h3>3.3 Financial Information</h3>
+
+    <ul>
+        <li>Credit Information</li>
+        <li>Loan Application Information</li>
+        <li>Investment Information</li>
+        <li>Transaction History</li>
+        <li>Income Information</li>
+        <li>Funding Requests</li>
+        <li>Financial Profile Information</li>
+    </ul>
+
+    <h3>3.4 Technical Information</h3>
+
+    <ul>
+        <li>IP Address</li>
+        <li>Browser Type</li>
+        <li>Device Information</li>
+        <li>Operating System</li>
+        <li>Referral URLs</li>
+        <li>Geographic Location Data</li>
+        <li>Network Information</li>
+        <li>Platform Usage Information</li>
+    </ul>
+
+    <h3>3.5 Cookies & Tracking Technologies</h3>
+
+    <ul>
+        <li>Cookies</li>
+        <li>Analytics Tools</li>
+        <li>Performance Monitoring Tools</li>
+        <li>Security Monitoring Technologies</li>
+    </ul>
+</section>
+
+<!-- Continue sections 4 to 16 using the same structure -->
+
+<section class="section">
+    <h2>16. Contact Information</h2>
+
+    <p>
+        For questions regarding this Privacy Policy,
+        data protection, or privacy concerns:
+    </p>
+
+    <p>
+        <strong>Senoamadi Financial Services (SFS)</strong>
+    </p>
+
+    <p>
+        Email:
+        <a href="mailto:baloyijudge@gmail.com">
+            baloyijudge@gmail.com
+        </a>
+    </p>
+
+    <p>
+        Phone: +27 72 144 8175
+    </p>
+
+    <p>
+        Website:
+        <a href="https://senoamadi-financials.infinityfreeapp.com">
+            www.senoamadi-financials.infinityfreeapp.com
+        </a>
+    </p>
+</section>
+
+<section class="section">
+    <h2>SFS Privacy Commitment</h2>
+
+    <div class="highlight">
+        At Senoamadi Financial Services, we believe that trust is the
+        foundation of every financial relationship.
+    </div>
+
+    <p>
+        We are committed to protecting your information,
+        safeguarding your privacy, and building a secure
+        financial ecosystem where technology, capital,
+        and opportunity work together for the benefit of all.
+    </p>
+</section>
+
+<footer class="page-footer">
+    © 2026 Senoamadi Financial Services (SFS).
+    All Rights Reserved.
+</footer>
+
+</div>
+</div>
+
+<script>
+
+function toggleMenu(){
+    const menu =
+    document.getElementById("mobileMenu");
+
+    menu.style.display =
+    menu.style.display === "flex"
+    ? "none"
+    : "flex";
+}
+
+const navLinks =
+document.querySelectorAll("nav a, .mobile-nav a, .mobile-menu a");
+
+navLinks.forEach(link=>{
+    if(link.getAttribute("href") === "privacy-policy.html"){
+        link.classList.add("active");
+    }
+});
+
+</script>
+
+</body>
+</html>

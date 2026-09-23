@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title that appears in search results -->
+    <title>HOME | SFS</title>
+    <!-- Short description that appears under the title in Google -->
+    <meta name="description" content="Get access to reliable digital banking, financial partner, and technology-driven
+            banking services." />
+    <!-- Keywords (optional but still useful) -->
+    <meta name="keywords" content="Senoamadi bank, loan, Investment, technology-driven
+            banking services, secure future, Judge" />
+    <!-- Author -->
+    <meta name="author" content="Judge Tshwarelo" />
+    <!-- Favicon (small icon that appears next to your site title) -->
+    <link rel="icon" type="image/png" href="/files/SFS-LOGO.png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- Boxicons for menu icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+    --gold:#D4AF37;
+    --gold-light:#F7D76A;
+    --dark:#040B16;
+    --navy:#08182E;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    color:white;
+    overflow-x:hidden;
+
+    background:
+    radial-gradient(circle at top right,
+    rgba(212,175,55,.12),
+    transparent 25%),
+
+    radial-gradient(circle at bottom left,
+    rgba(0,140,255,.12),
+    transparent 35%),
+
+    linear-gradient(
+    135deg,
+    #040B16,
+    #071427,
+    #020913);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:16px 60px;
+
+    background:rgba(4,11,22,.72);
+    backdrop-filter:blur(25px);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+header::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:1px;
+
+    background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(212,175,55,.8),
+    transparent);
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    cursor:pointer;
+}
+
+.logo-orbit{
+    position:relative;
+    width:58px;
+    height:58px;
+}
+
+.logo-orbit img{
+    width:100%;
+    height:100%;
+    border-radius:16px;
+    object-fit:cover;
+    position:relative;
+    z-index:2;
+}
+
+.orbit-ring{
+    position:absolute;
+    inset:-8px;
+    border-radius:50%;
+    border:1.5px solid rgba(212,175,55,.4);
+    animation:spin 10s linear infinite;
+}
+
+.orbit-ring::before{
+    content:"";
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    background:var(--gold);
+
+    border-radius:50%;
+
+    top:-5px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    box-shadow:
+    0 0 12px var(--gold),
+    0 0 25px var(--gold);
+}
+
+@keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+.logo span{
+    font-size:1.5rem;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+/* =========================
+   DESKTOP NAV
+========================= */
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav ul li a{
+    color:rgba(255,255,255,.75);
+    text-decoration:none;
+    font-size:15px;
+    font-weight:500;
+    position:relative;
+    transition:.35s;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    color:white;
+}
+
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:2px;
+
+    background:linear-gradient(
+    90deg,
+    var(--gold),
+    var(--gold-light));
+
+    transition:.35s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after{
+    width:100%;
+}
+
+/* =========================
+   HERO / GENERIC SECTION
+========================= */
+
+section{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    text-align:center;
+    padding:120px 20px;
+}
+
+section h1{
+    font-size:clamp(3rem,6vw,5.5rem);
+    font-weight:800;
+
+    background:linear-gradient(
+    90deg,
+    white,
+    var(--gold-light));
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+section p{
+    max-width:760px;
+
+    margin-top:20px;
+
+    color:rgba(255,255,255,.72);
+
+    line-height:1.9;
+    font-size:1.05rem;
+}
+
+/* =========================
+   MOBILE BOTTOM NAV
+========================= */
+
+.mobile-nav{
+    display:none;
+
+    position:fixed;
+    left:50%;
+    bottom:20px;
+
+    transform:translateX(-50%);
+
+    padding:12px;
+
+    border-radius:24px;
+
+    background:rgba(4,11,22,.88);
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    z-index:999;
+}
+
+.mobile-nav a{
+    color:rgba(255,255,255,.7);
+    text-decoration:none;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    font-size:11px;
+
+    padding:0 10px;
+}
+
+.mobile-nav i{
+    font-size:18px;
+    margin-bottom:4px;
+}
+
+.mobile-nav a.active{
+    color:var(--gold);
+}
+
+/* =========================
+   AI ORB
+========================= */
+
+.mobile-orb{
+    display:none;
+
+    position:fixed;
+
+    right:20px;
+    bottom:25px;
+
+    width:72px;
+    height:72px;
+
+    border-radius:75%;
+
+    background:
+    radial-gradient(circle at 30% 30%,
+    #fff6d8,
+    var(--gold));
+
+    box-shadow:
+    0 0 25px rgba(212,175,55,.5),
+    0 0 60px rgba(212,175,55,.25);
+
+    animation:pulse 3s infinite;
+
+    cursor:pointer;
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+.mobile-menu{
+    display:none;
+    flex-direction:column;
+    gap:10px;
+
+    position:fixed;
+    right:20px;
+    bottom:130px;
+
+    z-index:998;
+}
+
+.mobile-menu a{
+    text-decoration:none;
+    color:white;
+
+    padding:12px 18px;
+
+    border-radius:14px;
+
+    background:rgba(8,20,40,.95);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(212,175,55,.18);
+
+    transition:.3s;
+}
+
+.mobile-menu a:hover{
+    transform:translateX(-5px);
+    border-color:var(--gold);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    nav{
+        display:none;
+    }
+
+    .mobile-nav{
+        display:flex;
+    }
+
+    .mobile-orb{
+        display:block;
+        border-radius:75%;
+    }
+
+    header{
+        padding:15px 20px;
+    }
+
+    .logo span{
+        font-size:1.2rem;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #6c6c6c6b;
+    color: #fff;
+}
+
+/* ===== MAIN CONTENT ===== */
+section {
+    min-height: 100vh;
+    padding: 90px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#home {
+    background:
+    linear-gradient(
+    90deg,
+    rgba(4,11,22,.92) 20%,
+    rgba(4,11,22,.85) 35%,
+    rgba(4,11,22,.45) 70%,
+    rgba(4,11,22,.20) 100%),
+    url("/files/SFS.png") center center/cover no-repeat;
+    text-align: center;
+}
+
+#home .content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 1000px;
+}
+
+#home h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+#home p {
+    font-size: 1.3em;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+    justify-content: center;
+}
+
+.chip {
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: #0A1A2F;
+    border: 2px solid #D4AF37;
+    font-size: 13px;
+}
+
+.cta {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: #D4AF37;
+    color: #0A1A2F;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn.ghost {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+/* =========================
+   CAPITAL IN MOTION
+========================= */
+
+#motion{
+    min-height:auto;
+    padding:100px 20px 60px;
+}
+
+.motion-label{
+    letter-spacing:4px;
+    font-size:.85rem;
+    font-weight:700;
+    color:var(--gold);
+    margin-bottom:14px;
+}
+
+.flow{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    max-width:1000px;
+    margin-top:10px;
+}
+
+.flow-node{
+    padding:12px 20px;
+    border-radius:999px;
+    background:rgba(10,26,47,.75);
+    border:1.5px solid var(--gold);
+    font-weight:600;
+    font-size:.95rem;
+    letter-spacing:.5px;
+    color:var(--gold-light);
+    white-space:nowrap;
+}
+
+.flow-arrow{
+    color:var(--gold);
+    font-size:1.2rem;
+    opacity:.85;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:26px;
+    max-width:1100px;
+    width:100%;
+    margin-top:60px;
+}
+
+.card{
+    background:rgba(8,20,40,.65);
+    border:1px solid rgba(212,175,55,.25);
+    border-radius:18px;
+    padding:32px 26px;
+    text-align:left;
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:var(--gold);
+    box-shadow:0 15px 40px rgba(212,175,55,.15);
+}
+
+.card i{
+    font-size:1.8rem;
+    color:var(--gold);
+    margin-bottom:16px;
+    display:block;
+}
+
+.card h3{
+    font-size:1.2rem;
+    font-weight:700;
+    margin-bottom:10px;
+    color:var(--white);
+}
+
+.card p{
+    font-size:.95rem;
+    color:rgba(255,255,255,.65);
+    line-height:1.7;
+    margin:0;
+    max-width:none;
+}
+
+.motion-closing{
+    margin-top:70px;
+    max-width:720px;
+}
+
+.motion-closing p{
+    font-size:1.15rem;
+    line-height:1.9;
+    color:rgba(255,255,255,.85);
+}
+
+.motion-closing p.accent{
+    color:var(--gold-light);
+    font-weight:600;
+    margin-top:8px;
+}
+
+@media(max-width:768px){
+    .cards{
+        grid-template-columns:1fr;
+    }
+    .flow-node{
+        font-size:.8rem;
+        padding:10px 14px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+
+        <div class="logo-orbit">
+            <div class="orbit-ring"></div>
+            <img src="/files/SFS-LOGO.png" alt="SFS LOGO">
+        </div>
+
+        <span>Senoamadi Financial Services</span>
+
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="/index.html" class="active">Home</a></li>
+            <li><a href="/landing-page/about.html">About</a></li>
+            <li><a href="/landing-page/purpose.html">Purpose</a></li>
+            <li><a href="/landing-page/solution.html">Solution</a></li>
+            <li><a href="/landing-page/services.html">Services</a></li>
+            <li><a href="/landing-page/contact.html">Connect</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<div class="mobile-orb" onclick="toggleMenu()"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="/index.html" class="active">Home</a>
+    <a href="/landing-page/about.html">About</a>
+    <a href="/landing-page/purpose.html">Purpose</a>
+    <a href="/landing-page/solution.html">Solution</a>
+    <a href="/landing-page/services.html">Services</a>
+    <a href="/landing-page/contact.html">Connect</a>
+</div>
+
+<main>
+
+    <!-- HOME / HERO -->
+    <section id="home">
+      <div class="content">
+          <p></p>
+        <h1><i>Vision Beyond Sight</i><span style="color:var(--gold-light);"> — where trust meets innovation</span></h1>
+        <div class="chips">
+          <span class="chip">PERSONAL / BUSINESS</span>
+          <span class="chip">LOANS / INVESTMENT</span>
+          <span class="chip"><a href="/landing-page/privacy-policy.html" title="Privacy-Policy" style="color:var(--gold-light);text-decoration:none;">Privacy-Policy</a></span>
+          <span class="chip"><a href="/landing-page/terms-and-conditions.html" title="Terms & Conditions" style="color:var(--gold-light);text-decoration:none;">Terms & Conditions</a></span>
+        </div>
+        <div class="cta">
+          <button class="btn" onclick="window.location.href='/login.php?form=login'">Login</button>
+          <button class="btn ghost" onclick="window.location.href='/login.php?form=register'">Sign Up</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+<script>
+
+function toggleMenu(){
+    const menu =
+    document.getElementById("mobileMenu");
+
+    menu.style.display =
+    menu.style.display === "flex"
+    ? "none"
+    : "flex";
+}
+
+const sections =
+document.querySelectorAll("section");
+
+const navLinks =
+document.querySelectorAll("nav a, .mobile-nav a");
+
+window.addEventListener("scroll",()=>{
+
+    let current="";
+
+    sections.forEach(section=>{
+
+        const top =
+        section.offsetTop - 200;
+
+        if(window.scrollY >= top){
+            current = section.id;
+        }
+
+    });
+
+    navLinks.forEach(link=>{
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href") === "#" + current){
+            link.classList.add("active");
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

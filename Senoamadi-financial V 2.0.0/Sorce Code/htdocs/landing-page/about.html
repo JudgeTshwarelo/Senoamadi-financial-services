@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title that appears in search results -->
+  <title>ABOUT | SFS</title>
+  <!-- Short description that appears under the title in Google -->
+  <meta name="description" content="Get access to reliable digital banking, financial partner, and technology-driven
+            banking services." />
+  <!-- Keywords (optional but still useful) -->
+  <meta name="keywords" content="Senoamadi bank, loan, Investment, technology-driven
+            banking services, secure future, Judge" />
+  <!-- Author -->
+  <meta name="author" content="Judge Tshwarelo" />
+  <!-- Favicon (small icon that appears next to your site title) -->
+  <link rel="icon" type="image/png" href="/files/SFS-LOGO.png" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+  <!-- Boxicons for menu icons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+    --gold:#D4AF37;
+    --gold-light:#F7D76A;
+    --dark:#040B16;
+    --navy:#08182E;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    color:white;
+    overflow-x:hidden;
+
+    background:
+    radial-gradient(circle at top right,
+    rgba(212,175,55,.12),
+    transparent 25%),
+
+    radial-gradient(circle at bottom left,
+    rgba(0,140,255,.12),
+    transparent 35%),
+
+    linear-gradient(
+    135deg,
+    #040B16,
+    #071427,
+    #020913);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:16px 60px;
+
+    background:rgba(4,11,22,.72);
+    backdrop-filter:blur(25px);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+header::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:1px;
+
+    background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(212,175,55,.8),
+    transparent);
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    cursor:pointer;
+}
+
+.logo-orbit{
+    position:relative;
+    width:58px;
+    height:58px;
+}
+
+.logo-orbit img{
+    width:100%;
+    height:100%;
+    border-radius:16px;
+    object-fit:cover;
+    position:relative;
+    z-index:2;
+}
+
+.orbit-ring{
+    position:absolute;
+    inset:-8px;
+    border-radius:50%;
+    border:1.5px solid rgba(212,175,55,.4);
+    animation:spin 10s linear infinite;
+}
+
+.orbit-ring::before{
+    content:"";
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    background:var(--gold);
+
+    border-radius:50%;
+
+    top:-5px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    box-shadow:
+    0 0 12px var(--gold),
+    0 0 25px var(--gold);
+}
+
+@keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+.logo span{
+    font-size:1.5rem;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+/* =========================
+   DESKTOP NAV
+========================= */
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav ul li a{
+    color:rgba(255,255,255,.75);
+    text-decoration:none;
+    font-size:15px;
+    font-weight:500;
+    position:relative;
+    transition:.35s;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    color:white;
+}
+
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:2px;
+
+    background:linear-gradient(
+    90deg,
+    var(--gold),
+    var(--gold-light));
+
+    transition:.35s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after{
+    width:100%;
+}
+
+/* =========================
+   HERO
+========================= */
+
+section{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    text-align:center;
+    padding:120px 20px;
+}
+
+section h1{
+    font-size:clamp(3rem,6vw,5.5rem);
+    font-weight:800;
+
+    background:linear-gradient(
+    90deg,
+    white,
+    var(--gold-light));
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+section p{
+    max-width:760px;
+
+    margin-top:20px;
+
+    color:rgba(255,255,255,.72);
+
+    line-height:1.9;
+    font-size:1.05rem;
+}
+
+/* =========================
+   MOBILE BOTTOM NAV
+========================= */
+
+.mobile-nav{
+    display:none;
+
+    position:fixed;
+    left:50%;
+    bottom:20px;
+
+    transform:translateX(-50%);
+
+    padding:12px;
+
+    border-radius:24px;
+
+    background:rgba(4,11,22,.88);
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    z-index:999;
+}
+
+.mobile-nav a{
+    color:rgba(255,255,255,.7);
+    text-decoration:none;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    font-size:11px;
+
+    padding:0 10px;
+}
+
+.mobile-nav i{
+    font-size:18px;
+    margin-bottom:4px;
+}
+
+.mobile-nav a.active{
+    color:var(--gold);
+}
+
+/* =========================
+   AI ORB
+========================= */
+
+.mobile-orb{
+    display:none;
+
+    position:fixed;
+
+    right:20px;
+    bottom:25px;
+
+    width:72px;
+    height:72px;
+
+    border-radius:75%;
+
+    background:
+    radial-gradient(circle at 30% 30%,
+    #fff6d8,
+    var(--gold));
+
+    box-shadow:
+    0 0 25px rgba(212,175,55,.5),
+    0 0 60px rgba(212,175,55,.25);
+
+    animation:pulse 3s infinite;
+
+    cursor:pointer;
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+.mobile-menu{
+    display:none;
+    flex-direction:column;
+    gap:10px;
+
+    position:fixed;
+    right:20px;
+    bottom:130px;
+
+    z-index:998;
+}
+
+.mobile-menu a{
+    text-decoration:none;
+    color:white;
+
+    padding:12px 18px;
+
+    border-radius:14px;
+
+    background:rgba(8,20,40,.95);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(212,175,55,.18);
+
+    transition:.3s;
+}
+
+.mobile-menu a:hover{
+    transform:translateX(-5px);
+    border-color:var(--gold);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    nav{
+        display:none;
+    }
+
+    .mobile-nav{
+        display:flex;
+    }
+
+    .mobile-orb{
+        display:block;
+        border-radius:75%;
+    }
+
+    header{
+        padding:15px 20px;
+    }
+
+    .logo span{
+        font-size:1.2rem;
+    }
+}
+    
+    /* =========================================
+   SFS FUTURISTIC ABOUT SECTION
+========================================= */
+
+.about-sfs-section{
+    position:relative;
+    padding:160px 20px 80px;
+    overflow:hidden;
+}
+
+.about-sfs-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(circle at center,
+    rgba(212,175,55,.12),
+    transparent 55%);
+
+    pointer-events:none;
+}
+
+.about-container{
+    max-width:1000px;
+    margin:auto;
+    text-align:center;
+    position:relative;
+    z-index:1;
+}
+
+/* =========================================
+   BADGE
+========================================= */
+
+.about-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    padding:14px 28px;
+
+    border-radius:50px;
+
+    color:var(--gold-light);
+
+    background:rgba(212,175,55,.08);
+
+    border:1px solid rgba(212,175,55,.25);
+
+    backdrop-filter:blur(20px);
+
+    margin-bottom:30px;
+}
+
+.about-badge i{
+    color:var(--gold);
+}
+
+.about-container h1{
+    margin-bottom:20px;
+}
+
+.about-container > p{
+    margin:20px auto;
+}
+
+/* =========================================
+   OPENING STATEMENT PANEL
+========================================= */
+
+.opening-panel{
+
+    max-width:1000px;
+
+    margin:60px auto 0;
+
+    padding:50px;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(8,20,40,.88),
+    rgba(4,11,22,.95));
+
+    border:1px solid rgba(212,175,55,.18);
+
+    border-radius:30px;
+
+    backdrop-filter:blur(25px);
+
+    box-shadow:
+    0 0 80px rgba(212,175,55,.05);
+}
+
+.opening-panel h2{
+    color:var(--gold-light);
+    margin-bottom:30px;
+    font-size:2rem;
+}
+
+.opening-panel p{
+    color:rgba(255,255,255,.78);
+    line-height:2;
+    margin-bottom:0;
+    max-width:none;
+}
+
+.highlight-line{
+
+    display:inline-flex;
+    align-items:center;
+    gap:15px;
+
+    margin-top:25px;
+
+    padding:18px 35px;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+    90deg,
+    rgba(212,175,55,.15),
+    rgba(212,175,55,.05));
+
+    border:1px solid rgba(212,175,55,.25);
+}
+
+.highlight-line i{
+    color:var(--gold);
+}
+
+.highlight-line span{
+    color:white;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+/* =========================================
+   WHO WE ARE / PRINCIPLES
+========================================= */
+
+.who-we-are-section{
+    padding:100px 20px 160px;
+}
+
+.who-grid{
+    max-width:1300px;
+    margin:auto;
+}
+
+.section-label{
+
+    display:inline-block;
+
+    padding:10px 20px;
+
+    border-radius:50px;
+
+    margin-bottom:25px;
+
+    color:var(--gold-light);
+
+    border:1px solid rgba(212,175,55,.2);
+
+    background:rgba(212,175,55,.08);
+}
+
+.who-content{
+    text-align:center;
+    max-width:800px;
+    margin:0 auto 60px;
+}
+
+.who-content h2{
+
+    font-size:clamp(2.2rem,5vw,3.5rem);
+
+    margin-bottom:20px;
+
+    background:
+    linear-gradient(
+    90deg,
+    white,
+    var(--gold-light));
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.who-content p{
+    color:rgba(255,255,255,.75);
+    line-height:2;
+    margin:0 auto;
+}
+
+/* =========================================
+   FUTURE / PRINCIPLE CARDS
+========================================= */
+
+.future-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
+
+    max-width:1100px;
+    margin:0 auto;
+}
+
+.future-card{
+
+    position:relative;
+
+    padding:36px 30px;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(8,20,40,.75),
+    rgba(4,11,22,.92));
+
+    border:1px solid rgba(212,175,55,.15);
+
+    backdrop-filter:blur(20px);
+
+    transition:.4s;
+
+    text-align:left;
+}
+
+.future-card:hover{
+
+    transform:
+    translateY(-12px)
+    scale(1.02);
+
+    border-color:rgba(212,175,55,.45);
+
+    box-shadow:
+    0 0 50px rgba(212,175,55,.12);
+}
+
+.future-card::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:3px;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    var(--gold),
+    transparent);
+}
+
+.future-card .num{
+    display:inline-block;
+    font-size:.8rem;
+    letter-spacing:2px;
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:14px;
+}
+
+.future-card i{
+    font-size:2.2rem;
+    color:var(--gold);
+    margin-bottom:20px;
+    display:block;
+}
+
+.future-card h3{
+    color:white;
+    margin-bottom:12px;
+    font-size:1.3rem;
+}
+
+.future-card p{
+    color:rgba(255,255,255,.7);
+    line-height:1.8;
+    margin:0;
+    max-width:none;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:1100px){
+
+    .who-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:768px){
+
+    .about-sfs-section,
+    .who-we-are-section{
+        padding:100px 20px;
+    }
+
+    .opening-panel{
+        padding:35px 25px;
+    }
+    
+}
+    
+    /* =========================
+   CAPITAL IN MOTION
+========================= */
+
+#motion{
+    min-height:100vh;       /* full viewport height */
+    height:100vh;           /* force exact height */
+    padding:0 20px;         /* reset padding, keep side spacing */
+    display:flex;
+    flex-direction:column;
+    justify-content:center; /* vertical centering */
+    align-items:center;     /* horizontal centering */
+    text-align:center;
+    box-sizing:border-box;  /* ensure padding doesn't add to height */
+}
+
+.motion-label{
+    letter-spacing:4px;
+    font-size:.85rem;
+    font-weight:700;
+    color:var(--gold);
+    margin-bottom:14px;
+}
+
+.flow{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    max-width:1000px;
+    margin-top:10px;
+    margin-bottom:20px;     /* spacing between flow and cards */
+}
+
+.flow-node{
+    padding:12px 20px;
+    border-radius:999px;
+    background:rgba(10,26,47,.75);
+    border:1.5px solid var(--gold);
+    font-weight:600;
+    font-size:.95rem;
+    letter-spacing:.5px;
+    color:var(--gold-light);
+    white-space:nowrap;
+}
+
+.flow-arrow{
+    color:var(--gold);
+    font-size:1.2rem;
+    opacity:.85;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:26px;
+    max-width:1100px;
+    width:100%;
+    margin-top:40px;        /* adjust spacing */
+}
+
+.card{
+    background:rgba(8,20,40,.65);
+    border:1px solid rgba(212,175,55,.25);
+    border-radius:18px;
+    padding:32px 26px;
+    text-align:left;
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:var(--gold);
+    box-shadow:0 15px 40px rgba(212,175,55,.15);
+}
+
+.card i{
+    font-size:1.8rem;
+    color:var(--gold);
+    margin-bottom:16px;
+    display:block;
+}
+
+.card h3{
+    font-size:1.2rem;
+    font-weight:700;
+    margin-bottom:10px;
+    color:var(--white);
+}
+
+.card p{
+    font-size:.95rem;
+    color:rgba(255,255,255,.65);
+    line-height:1.7;
+    margin:0;
+    max-width:none;
+}
+
+.motion-closing{
+    margin-top:70px;
+    max-width:720px;
+}
+
+.motion-closing p{
+    font-size:1.15rem;
+    line-height:1.9;
+    color:rgba(255,255,255,.85);
+}
+
+.motion-closing p.accent{
+    color:var(--gold-light);
+    font-weight:600;
+    margin-top:8px;
+}
+
+@media(max-width:768px){
+    .cards{
+        grid-template-columns:1fr;
+    }
+    .flow-node{
+        font-size:.8rem;
+        padding:10px 14px;
+    }
+    #motion {
+        height: auto;          /* allow scroll on small screens if needed */
+        min-height: 100vh;     /* but still at least full height */
+        padding: 80px 20px;    /* some breathing room */
+    }
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+
+        <div class="logo-orbit">
+            <div class="orbit-ring"></div>
+            <img src="/files/SFS-LOGO.png" alt="SFS LOGO">
+        </div>
+
+        <span>Senoamadi Financial Services</span>
+
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="/index.html" >Home</a></li>
+            <li><a href="/landing-page/about.html" class="active">About</a></li>
+            <li><a href="/landing-page/purpose.html">Purpose</a></li>
+            <li><a href="/landing-page/solution.html">Solution</a></li>
+            <li><a href="/landing-page/services.html">Services</a></li>
+            <li><a href="/landing-page/contact.html">Connect</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<div class="mobile-orb" onclick="toggleMenu()"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="/index.html" class="active">Home</a>
+    <a href="/landing-page/about.html">About</a>
+    <a href="/landing-page/purpose.html">Purpose</a>
+    <a href="/landing-page/solution.html">Solution</a>
+    <a href="/landing-page/services.html">Services</a>
+    <a href="/landing-page/contact.html">Connect</a>
+</div>
+
+<!-- CAPITAL IN MOTION -->
+    <section id="motion">
+
+      <div class="flow">
+        <span class="flow-node">PEOPLE</span>
+        <i class="bx bx-right-arrow-alt flow-arrow"></i>
+        <span class="flow-node">CAPITAL</span>
+        <i class="bx bx-right-arrow-alt flow-arrow"></i>
+        <span class="flow-node">OPPORTUNITIES</span>
+        <i class="bx bx-right-arrow-alt flow-arrow"></i>
+        <span class="flow-node">BUSINESSES</span>
+        <i class="bx bx-right-arrow-alt flow-arrow"></i>
+        <span class="flow-node">GROWTH</span>
+        <i class="bx bx-right-arrow-alt flow-arrow"></i>
+        <span class="flow-node">PEOPLE</span>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <i class="bx bx-coin-stack"></i>
+          <h3>Provide Capital</h3>
+          <p>Put your capital to work through opportunities that match your goals.</p>
+        </div>
+        <div class="card">
+          <i class="bx bx-trending-up"></i>
+          <h3>Access Capital</h3>
+          <p>Find structured funding for your business or project.</p>
+        </div>
+        <div class="card">
+          <i class="bx bx-network-chart"></i>
+          <h3>Grow Together</h3>
+          <p>A financial network designed around participation, transparency and productive growth.</p>
+        </div>
+      </div>
+
+    </section>
+
+<script>
+
+function toggleMenu(){
+    const menu =
+    document.getElementById("mobileMenu");
+
+    menu.style.display =
+    menu.style.display === "flex"
+    ? "none"
+    : "flex";
+}
+
+const sections =
+document.querySelectorAll("section");
+
+const navLinks =
+document.querySelectorAll("nav a, .mobile-nav a");
+
+window.addEventListener("scroll",()=>{
+
+    let current="";
+
+    sections.forEach(section=>{
+
+        const top =
+        section.offsetTop - 200;
+
+        if(window.scrollY >= top){
+            current = section.id;
+        }
+
+    });
+
+    navLinks.forEach(link=>{
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href") === "#" + current){
+            link.classList.add("active");
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

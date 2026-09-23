@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Terms & Conditions | Senoamadi Financial Services</title>
+
+<meta name="description"
+content="Terms and Conditions governing the use of Senoamadi Financial Services (SFS) platform, products, and services.">
+
+<meta name="keywords" content="Senoamadi bank, loan, Investment, technology-driven banking services, secure future, Judge" />
+<meta name="author" content="Judge Tshwarelo" />
+<link rel="icon" type="image/png" href="/files/SFS-LOGO.png" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+    --gold:#D4AF37;
+    --gold-light:#F7D76A;
+    --dark:#040B16;
+    --navy:#08182E;
+    --white:#ffffff;
+
+    --primary:#0A1A2F;
+    --secondary:#08182E;
+    --light:#f5f7fa;
+    --text:#333333;
+    --border:#e6eaf0;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    color:var(--text);
+    background:var(--light);
+    line-height:1.8;
+    overflow-x:hidden;
+}
+
+/* =========================
+   HEADER (from index)
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:16px 60px;
+
+    background:rgba(4,11,22,.92);
+    backdrop-filter:blur(25px);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+header::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:1px;
+
+    background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(212,175,55,.8),
+    transparent);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    cursor:pointer;
+}
+
+.logo-orbit{
+    position:relative;
+    width:58px;
+    height:58px;
+}
+
+.logo-orbit img{
+    width:100%;
+    height:100%;
+    border-radius:16px;
+    object-fit:cover;
+    position:relative;
+    z-index:2;
+}
+
+.orbit-ring{
+    position:absolute;
+    inset:-8px;
+    border-radius:50%;
+    border:1.5px solid rgba(212,175,55,.4);
+    animation:spin 10s linear infinite;
+}
+
+.orbit-ring::before{
+    content:"";
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    background:var(--gold);
+
+    border-radius:50%;
+
+    top:-5px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    box-shadow:
+    0 0 12px var(--gold),
+    0 0 25px var(--gold);
+}
+
+@keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+.logo span{
+    color:white;
+    font-size:1.5rem;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav ul li a{
+    color:rgba(255,255,255,.75);
+    text-decoration:none;
+    font-size:15px;
+    font-weight:500;
+    position:relative;
+    transition:.35s;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    color:white;
+}
+
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:2px;
+
+    background:linear-gradient(
+    90deg,
+    var(--gold),
+    var(--gold-light));
+
+    transition:.35s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after{
+    width:100%;
+}
+
+/* =========================
+   MOBILE BOTTOM NAV
+========================= */
+
+.mobile-nav{
+    display:none;
+
+    position:fixed;
+    left:50%;
+    bottom:20px;
+
+    transform:translateX(-50%);
+
+    padding:12px;
+
+    border-radius:24px;
+
+    background:rgba(4,11,22,.88);
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    z-index:999;
+}
+
+.mobile-nav a{
+    color:rgba(255,255,255,.7);
+    text-decoration:none;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    font-size:11px;
+
+    padding:0 10px;
+}
+
+.mobile-nav i{
+    font-size:18px;
+    margin-bottom:4px;
+}
+
+.mobile-nav a.active{
+    color:var(--gold);
+}
+
+/* =========================
+   AI ORB / MOBILE MENU
+========================= */
+
+.mobile-orb{
+    display:none;
+
+    position:fixed;
+
+    right:20px;
+    bottom:25px;
+
+    width:72px;
+    height:72px;
+
+    border-radius:75%;
+
+    background:
+    radial-gradient(circle at 30% 30%,
+    #fff6d8,
+    var(--gold));
+
+    box-shadow:
+    0 0 25px rgba(212,175,55,.5),
+    0 0 60px rgba(212,175,55,.25);
+
+    animation:pulse 3s infinite;
+
+    cursor:pointer;
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+.mobile-menu{
+    display:none;
+    flex-direction:column;
+    gap:10px;
+
+    position:fixed;
+    right:20px;
+    bottom:130px;
+
+    z-index:998;
+}
+
+.mobile-menu a{
+    text-decoration:none;
+    color:white;
+
+    padding:12px 18px;
+
+    border-radius:14px;
+
+    background:rgba(8,20,40,.95);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(212,175,55,.18);
+
+    transition:.3s;
+}
+
+.mobile-menu a:hover{
+    transform:translateX(-5px);
+    border-color:var(--gold);
+}
+
+/* =========================
+   TERMS CONTENT
+========================= */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:140px 20px 60px;
+}
+
+.terms-card{
+    background:var(--white);
+    padding:50px;
+    border-radius:20px;
+    box-shadow:0 10px 40px rgba(0,0,0,.08);
+}
+
+.header-block{
+    text-align:center;
+    margin-bottom:50px;
+    padding-bottom:30px;
+    border-bottom:1px solid var(--border);
+}
+
+.header-block h1{
+    color:var(--primary);
+    font-size:3rem;
+}
+
+.header-block p{
+    color:#666;
+}
+
+.section{
+    margin-bottom:40px;
+}
+
+.section h2{
+    color:var(--secondary);
+    margin-bottom:15px;
+}
+
+.section p{
+    margin-bottom:15px;
+}
+
+.section ul{
+    padding-left:25px;
+}
+
+.section li{
+    margin-bottom:8px;
+}
+
+.notice{
+    background:#f1f7ff;
+    border-left:5px solid var(--primary);
+    padding:20px;
+    border-radius:10px;
+    margin:20px 0;
+}
+
+footer.page-footer{
+    border-top:1px solid var(--border);
+    margin-top:50px;
+    padding-top:25px;
+    text-align:center;
+    color:#666;
+}
+
+a{
+    color:var(--primary);
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    nav{
+        display:none;
+    }
+
+    .mobile-nav{
+        display:flex;
+    }
+
+    .mobile-orb{
+        display:block;
+        border-radius:75%;
+    }
+
+    header{
+        padding:15px 20px;
+    }
+
+    .logo span{
+        font-size:1.2rem;
+    }
+
+    .container{
+        padding-top:110px;
+    }
+
+    .terms-card{
+        padding:25px;
+    }
+
+    .header-block h1{
+        font-size:2rem;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+    <div class="logo" onclick="window.location.href='index.php'">
+
+        <div class="logo-orbit">
+            <div class="orbit-ring"></div>
+            <img src="/files/SFS-LOGO.png" alt="SFS LOGO">
+        </div>
+
+        <span>Senoamadi Financial Services</span>
+
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="/index.html" class="active">Home</a></li>
+            <li><a href="/landing-page/about.html">About</a></li>
+            <li><a href="/landing-page/purpose.html">Purpose</a></li>
+            <li><a href="/landing-page/solution.html">Solution</a></li>
+            <li><a href="/landing-page/services.html">Services</a></li>
+            <li><a href="/landing-page/contact.html">Connect</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<div class="mobile-orb" onclick="toggleMenu()"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="/index.html" class="active">Home</a>
+    <a href="/landing-page/about.html">About</a>
+    <a href="/landing-page/purpose.html">Purpose</a>
+    <a href="/landing-page/solution.html">Solution</a>
+    <a href="/landing-page/services.html">Services</a>
+    <a href="/landing-page/contact.html">Connect</a>
+</div>
+
+<div class="container">
+
+<div class="terms-card">
+
+<div class="header-block">
+    <h1>Terms & Conditions</h1>
+    <p><strong>Senoamadi Financial Services (SFS)</strong></p>
+    <p><strong>Effective Date:</strong> 29/10/2025</p>
+</div>
+
+<section class="section">
+<h2>1. Introduction</h2>
+
+<p>
+Welcome to Senoamadi Financial Services ("SFS", "we", "our", or "us").
+</p>
+
+<p>
+These Terms and Conditions govern your access to and use of the SFS website,
+mobile applications, digital platforms, products, services, content,
+software, and financial technology solutions.
+</p>
+
+<p>
+By accessing, registering for, or using any SFS service, you agree to be
+legally bound by these Terms and Conditions.
+</p>
+
+<p>
+If you do not agree with these Terms, you must discontinue use of our
+services immediately.
+</p>
+</section>
+
+<section class="section">
+<h2>2. About SFS</h2>
+
+<p>
+Senoamadi Financial Services is a financial technology platform designed to
+connect individuals, businesses, investors, lenders, financial institutions,
+and communities through technology-driven financial solutions.
+</p>
+
+<ul>
+<li>Business Funding Opportunities</li>
+<li>Investment Opportunities</li>
+<li>Financial Marketplaces</li>
+<li>Digital Financial Tools</li>
+<li>Lending Facilitation Services</li>
+<li>Community Finance Solutions</li>
+<li>Financial Education</li>
+<li>AI-Powered Financial Assistance</li>
+<li>Digital Payment Solutions</li>
+<li>Future Financial Products and Services</li>
+</ul>
+
+<p>
+The availability of specific services may vary and may change without notice.
+</p>
+</section>
+
+<section class="section">
+<h2>3. Eligibility</h2>
+
+<ul>
+<li>Be at least 18 years old.</li>
+<li>Possess legal capacity to enter binding agreements.</li>
+<li>Provide accurate information.</li>
+<li>Comply with all applicable laws and regulations.</li>
+</ul>
+
+<p>
+SFS reserves the right to refuse service to any person or entity at its sole
+discretion where legally permitted.
+</p>
+</section>
+
+<section class="section">
+<h2>4. User Accounts</h2>
+
+<ul>
+<li>Provide accurate information.</li>
+<li>Keep information updated.</li>
+<li>Maintain account security.</li>
+<li>Protect login credentials.</li>
+<li>Report unauthorized account access immediately.</li>
+</ul>
+
+<p>
+You are responsible for all activities conducted through your account.
+</p>
+</section>
+
+<section class="section">
+<h2>5. Identity Verification</h2>
+
+<ul>
+<li>Identity Verification</li>
+<li>Proof of Address</li>
+<li>Business Registration Documents</li>
+<li>Banking Verification</li>
+<li>Financial Information</li>
+<li>Additional Supporting Documentation</li>
+</ul>
+
+<p>
+Failure to provide requested information may result in service restrictions.
+</p>
+</section>
+
+<section class="section">
+<h2>6. Financial Services Disclaimer</h2>
+
+<div class="notice">
+SFS operates primarily as a technology platform facilitating financial
+interactions between users and opportunities.
+</div>
+
+<ul>
+<li>SFS is not a bank.</li>
+<li>SFS is not a deposit-taking institution.</li>
+<li>SFS does not guarantee funding.</li>
+<li>SFS does not guarantee investment returns.</li>
+<li>SFS does not guarantee loan approvals.</li>
+<li>SFS does not guarantee business performance.</li>
+</ul>
+
+<p>
+Users are responsible for conducting their own due diligence before entering
+financial arrangements.
+</p>
+</section>
+
+<section class="section">
+<h2>7. Funding & Investment Opportunities</h2>
+
+<p>
+Opportunities presented through SFS may involve financial risk.
+</p>
+
+<ul>
+<li>Investments may lose value.</li>
+<li>Businesses may fail.</li>
+<li>Borrowers may default.</li>
+<li>Markets may fluctuate.</li>
+<li>Economic conditions may change.</li>
+</ul>
+
+<p>
+Past performance does not guarantee future results.
+</p>
+</section>
+
+<section class="section">
+<h2>8. AI & Automated Services</h2>
+
+<ul>
+<li>Opportunity Matching</li>
+<li>Risk Analysis</li>
+<li>Fraud Detection</li>
+<li>Customer Support</li>
+<li>Financial Insights</li>
+<li>Platform Optimization</li>
+</ul>
+
+<p>
+AI-generated information is provided for informational purposes only and
+should not be considered financial, legal, tax, or investment advice.
+</p>
+</section>
+
+<section class="section">
+<h2>9. User Responsibilities</h2>
+
+<ul>
+<li>Use the platform lawfully.</li>
+<li>Provide truthful information.</li>
+<li>Respect other users.</li>
+<li>Maintain account security.</li>
+<li>Comply with applicable regulations.</li>
+</ul>
+</section>
+
+<section class="section">
+<h2>10. Prohibited Activities</h2>
+
+<ul>
+<li>Fraud</li>
+<li>Money Laundering</li>
+<li>Financing Illegal Activities</li>
+<li>Identity Misrepresentation</li>
+<li>Unauthorized Access Attempts</li>
+<li>Malware Distribution</li>
+<li>Platform Manipulation</li>
+<li>Abuse of Systems</li>
+</ul>
+</section>
+
+<section class="section">
+<h2>11. Intellectual Property Rights</h2>
+
+<p>
+All software, branding, content, logos, designs, platform architecture,
+technology, and documentation remain the exclusive property of SFS or its
+licensors.
+</p>
+</section>
+
+<section class="section">
+<h2>12. Fees & Charges</h2>
+
+<ul>
+<li>Platform Fees</li>
+<li>Transaction Fees</li>
+<li>Service Fees</li>
+<li>Subscription Fees</li>
+<li>Processing Fees</li>
+</ul>
+</section>
+
+<section class="section">
+<h2>13. Service Availability</h2>
+
+<p>
+SFS does not guarantee uninterrupted platform access and shall not be liable
+for service interruptions caused by maintenance, upgrades, failures,
+cybersecurity incidents, or force majeure events.
+</p>
+</section>
+
+<section class="section">
+<h2>14. Third-Party Services</h2>
+
+<p>
+SFS may integrate with third-party providers. We are not responsible for
+their products, decisions, content, systems, or policies.
+</p>
+</section>
+
+<section class="section">
+<h2>15. Privacy</h2>
+
+<p>
+Your use of SFS services is governed by our
+<a href="privacy-policy.html">Privacy Policy</a>.
+</p>
+</section>
+
+<section class="section">
+<h2>16. Limitation of Liability</h2>
+
+<ul>
+<li>Financial Losses</li>
+<li>Lost Profits</li>
+<li>Business Interruption</li>
+<li>Data Loss</li>
+<li>Indirect Damages</li>
+<li>Investment Losses</li>
+<li>Opportunity Losses</li>
+</ul>
+</section>
+
+<section class="section">
+<h2>17. Indemnification</h2>
+
+<p>
+You agree to indemnify and hold harmless SFS, its founders, employees,
+contractors, affiliates, and partners against claims arising from your use
+of the platform or violation of these Terms.
+</p>
+</section>
+
+<section class="section">
+<h2>18. Suspension & Termination</h2>
+
+<p>
+SFS may suspend or terminate accounts where fraud, security threats, legal
+requirements, or platform abuse are detected.
+</p>
+</section>
+
+<section class="section">
+<h2>19. Regulatory Compliance</h2>
+
+<ul>
+<li>Financial Services Laws</li>
+<li>AML Regulations</li>
+<li>Counter-Terrorism Financing Regulations</li>
+<li>Tax Laws</li>
+<li>Consumer Protection Laws</li>
+<li>Data Protection Laws</li>
+</ul>
+</section>
+
+<section class="section">
+<h2>20. Changes to Services</h2>
+
+<p>
+SFS may introduce, modify, suspend, replace, or discontinue services at any
+time.
+</p>
+</section>
+
+<section class="section">
+<h2>21. Changes to Terms</h2>
+
+<p>
+Updated Terms become effective immediately upon publication unless otherwise
+stated.
+</p>
+</section>
+
+<section class="section">
+<h2>22. Governing Law</h2>
+
+<p>
+These Terms are governed by the laws of the Republic of South Africa.
+</p>
+</section>
+
+<section class="section">
+<h2>23. Contact Information</h2>
+
+<p><strong>Senoamadi Financial Services (SFS)</strong></p>
+
+<p>Email: <a href="mailto:baloyijudge@gmail.com">baloyijudge@gmail.com</a></p>
+
+<p>Phone: +27 72 144 8175</p>
+
+<p>Website: <a href="https://senoamadi-financials.infinityfreeapp.com">www.senoamadi-financials.infinityfreeapp.com</a></p>
+</section>
+
+<section class="section">
+<h2>SFS Legal Notice</h2>
+
+<div class="notice">
+SFS exists to connect capital, opportunity, technology, and people.
+</div>
+
+<p>
+While we strive to create a secure, transparent, and innovative financial
+ecosystem, financial activities involve inherent risks and participation in
+any opportunity remains a personal decision made at the user's discretion.
+</p>
+
+<p>
+<strong>Connecting Capital. Empowering Growth. Building Tomorrow.</strong>
+</p>
+</section>
+
+<footer class="page-footer">
+© 2026 Senoamadi Financial Services (SFS). All Rights Reserved.
+</footer>
+
+</div>
+</div>
+
+<script>
+
+function toggleMenu(){
+    const menu =
+    document.getElementById("mobileMenu");
+
+    menu.style.display =
+    menu.style.display === "flex"
+    ? "none"
+    : "flex";
+}
+
+</script>
+
+</body>
+</html>
